@@ -1,7 +1,7 @@
 FROM golang:1.9.4-alpine
 ENV ADMIN_USER miniflux
 ENV ADMIN_PASS test123
-ENV ITEM_PER_PAGE 30
+ENV ITEM_PER_PAGE 20
 
 RUN apk --no-cache add ca-certificates expect git
 RUN go get -u github.com/golang/dep/cmd/dep
