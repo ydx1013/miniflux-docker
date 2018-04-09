@@ -1,0 +1,26 @@
+{
+  "name": "Miniflux",
+  "description": "deploy Miniflux to Heroku.",
+  "keywords": ["Miniflux"],
+  "env": {
+    "ADMIN_USER": {
+       "description": "ADMIN_USER",
+       "value": "miniflux"
+     },
+    "ADMIN_PASS": {
+       "description": "ADMIN_PASS",
+       "value": "test123"
+     }, 
+    "WORKER_POOL_SIZE": {
+       "description": "WORKER_POOL_SIZE",
+       "value": "15"
+     },
+    "POLLING_FREQUENCY": {
+       "description": "POLLING_FREQUENCY",
+       "value": "10"
+     }
+  },
+  "website": "https://github.com/miniflux/miniflux",
+  "repository": "https://github.com/miniflux/miniflux",
+  "stack": "container"
+}
