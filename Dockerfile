@@ -3,7 +3,7 @@ ENV ADMIN_USER miniflux
 ENV ADMIN_PASS test123
 ENV ITEM_PER_PAGE 20
 
-RUN apk --no-cache add ca-certificates expect git
+RUN apk --no-cache add ca-certificates expect git curl
 RUN go get -u github.com/golang/dep/cmd/dep
 RUN go get -u github.com/miniflux/miniflux
 RUN rm $GOPATH/src/github.com/miniflux/miniflux/template/html/common/layout.html
