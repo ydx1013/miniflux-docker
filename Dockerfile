@@ -1,4 +1,4 @@
-FROM golang:1.9.4-alpine
+FROM golang:1.10-alpine
 ENV ADMIN_USER miniflux
 ENV ADMIN_PASS test123
 ENV ITEM_PER_PAGE 20
