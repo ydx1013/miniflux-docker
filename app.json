@@ -22,5 +22,9 @@
   },
   "website": "https://github.com/miniflux/miniflux",
   "repository": "https://github.com/miniflux/miniflux",
-  "stack": "container"
+  "stack": "container",
+  "addons": [
+    "papertrail",
+    "heroku-postgresql"
+  ]
 }
