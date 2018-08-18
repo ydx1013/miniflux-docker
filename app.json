@@ -25,6 +25,7 @@
   "stack": "container",
   "addons": [
     "papertrail",
-    "heroku-postgresql"
+    "heroku-postgresql", 
+    "scheduler"
   ]
 }
