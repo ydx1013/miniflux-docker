@@ -18,6 +18,10 @@
     "POLLING_FREQUENCY": {
        "description": "POLLING_FREQUENCY",
        "value": "10"
+     },
+    "PROXY_IMAGES": {
+       "description": "PROXY_IMAGES",
+       "value": "all"
      }
   },
   "website": "https://github.com/miniflux/miniflux",
