@@ -17,4 +17,7 @@ RUN apk del git
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
 USER nobody
+
+EXPOSE 8080/tcp
+
 CMD /entrypoint.sh
