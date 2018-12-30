@@ -1,9 +1,9 @@
-FROM golang:1.11.4-alpine
+FROM alpine:latest
 ENV ADMIN_USER miniflux
 ENV ADMIN_PASS yhiblog
 ENV ITEM_PER_PAGE 20
 
-RUN apk --no-cache add expect alpine-sdk
+RUN apk --no-cache add expect alpine-sdk go
 RUN git clone https://github.com/miniflux/miniflux.git
 RUN sed -i "s/100/${ITEM_PER_PAGE}/g" miniflux/ui/pagination.go
 RUN sed -i '/<template id="keyboard-shortcuts">/,/<\/template>/d' miniflux/template/html/common/layout.html
@@ -16,7 +16,7 @@ make clean && \
 cd .. && \
 rm -rf miniflux && \
 go clean
-RUN apk del alpine-sdk
+RUN apk del alpine-sdk go
 RUN apk --no-cache add curl ca-certificates
 
 ADD entrypoint.sh /entrypoint.sh
