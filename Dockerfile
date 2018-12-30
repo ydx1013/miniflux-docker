@@ -13,7 +13,7 @@ make miniflux VERSION=$last_version && \
 make clean && \
 mv miniflux /usr/local/bin
 RUN rm -rf miniflux
-RUN apk del git make expect
+RUN apk del git make
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
