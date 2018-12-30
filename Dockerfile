@@ -14,7 +14,7 @@ ls && \
 mv miniflux /usr/local/bin && \
 make clean
 
-RUN rm -rf miniflux
+RUN rm -rf miniflux && go clean
 RUN apk del alpine-sdk
 RUN apk --no-cache add curl
 
