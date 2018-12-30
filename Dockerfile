@@ -12,6 +12,7 @@ last_version=`curl https://github.com/miniflux/miniflux/tags 2>/dev/null | grep 
 make miniflux VERSION=$last_version && \
 make clean && \
 mv miniflux /usr/local/bin
+RUN rm -rf miniflux
 RUN apk del git
 
 ADD entrypoint.sh /entrypoint.sh
