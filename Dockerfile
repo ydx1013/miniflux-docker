@@ -12,11 +12,12 @@ last_version=`curl https://github.com/miniflux/miniflux/tags 2>/dev/null | grep 
 make miniflux VERSION=$last_version && \
 ls && \
 mv miniflux /usr/local/bin && \
-make clean
-
-RUN rm -rf miniflux && go clean
+make clean && \
+cd .. && \
+rm -rf miniflux && \
+go clean
 RUN apk del alpine-sdk
-RUN apk --no-cache add curl
+RUN apk --no-cache add curl ca-certificates
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
