@@ -10,8 +10,10 @@ RUN sed -i '/<template id="keyboard-shortcuts">/,/<\/template>/d' miniflux/templ
 RUN cd miniflux && \
 last_version=`curl https://github.com/miniflux/miniflux/tags 2>/dev/null | grep "miniflux/releases/tag" | head -n 1 | sed 's#.*tag/\([^"]*\).*#\1#'` && \
 make miniflux VERSION=$last_version && \
-make clean && \
-mv miniflux /usr/local/bin
+ls && \
+mv miniflux /usr/local/bin && \
+make clean
+
 RUN rm -rf miniflux
 RUN apk del alpine-sdk
 RUN apk --no-cache add curl
