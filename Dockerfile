@@ -3,7 +3,7 @@ ENV ADMIN_USER miniflux
 ENV ADMIN_PASS yhiblog
 ENV ITEM_PER_PAGE 20
 
-RUN apk --no-cache add ca-certificates expect git curl make gcc
+RUN apk --no-cache add expect alpine-sdk
 RUN git clone https://github.com/miniflux/miniflux.git
 RUN sed -i "s/100/${ITEM_PER_PAGE}/g" miniflux/ui/pagination.go
 RUN sed -i '/<template id="keyboard-shortcuts">/,/<\/template>/d' miniflux/template/html/common/layout.html
@@ -13,7 +13,8 @@ make miniflux VERSION=$last_version && \
 make clean && \
 mv miniflux /usr/local/bin
 RUN rm -rf miniflux
-RUN apk del git make gcc
+RUN apk del alpine-sdk
+RUN apk --no-cache add curl
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh 
